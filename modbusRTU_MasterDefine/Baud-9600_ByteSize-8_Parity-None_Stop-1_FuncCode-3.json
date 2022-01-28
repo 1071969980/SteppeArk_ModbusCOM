@@ -1,0 +1,30 @@
+{
+    "Baud": 9600,
+    "ByteSize": 8,
+    "Parity": "N",
+    "Stop": 1,
+    "FuncCode": 3,
+    "Actions(ParamName, SlaveID, Address, SaveAddress, Factor)": [
+        [
+            "温度",
+            11,
+            3,
+            0,
+            0.1
+        ],
+        [
+            "二氧化碳",
+            11,
+            8,
+            0,
+            1
+        ],
+        [
+            "湿度",
+            11,
+            2,
+            0,
+            0.1
+        ]
+    ]
+}

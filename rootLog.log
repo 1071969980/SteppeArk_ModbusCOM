@@ -1,0 +1,11 @@
+2022-01-27  16:57:15; DEBUG; app start
+2022-01-27  16:57:15; DEBUG; create './database' folder
+2022-01-27  16:57:15; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-01-27  16:57:15; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-01-27.db
+2022-01-27  16:58:58; DEBUG; app start
+2022-01-27  23:19:03; DEBUG; app start
+2022-01-27  23:20:07; DEBUG; app start
+2022-01-27  23:20:07; DEBUG; load modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-01-28  00:11:26; DEBUG; app start
+2022-01-28  00:11:26; DEBUG; load modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-01-28  00:11:26; DEBUG; Create new database at: database/2022-01-28.db
