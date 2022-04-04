@@ -34,19 +34,40 @@ def CriticalToExit(mesg):
     sys.exit(0)
 
 
-def SaveDataToPersistence(cursor: sqlite3.Cursor, time, name, data):
+def SaveDataToPersistenceSQL(cursor: sqlite3.Cursor, time, name, data):
     cursor.execute("INSERT INTO table01 VALUES (null,?,?,?)", (time, name, data))
 
 
-def SaveDataToRuntime(cursor: sqlite3.Cursor, table, name, data):
+def InitDataToRuntimeSQL(cursor: sqlite3.Cursor, table, name):
     if table == Runtime.Input:
-        cursor.execute("INSERT INTO InputParam VALUES (null,?,?)", (name, data))
+        cursor.execute("INSERT INTO InputParam VALUES (null,?,?)", (name, 0))
         return
     if table == Runtime.Output:
-        cursor.execute("INSERT INTO OutputParam VALUES (null,?,?)", (name, data))
+        cursor.execute("INSERT INTO OutputParam VALUES (null,?,?)", (name, 0))
         return
     if table == Runtime.Global:
-        cursor.execute("INSERT INTO GlobalParam VALUES (null,?,?)", (name, data))
+        cursor.execute("INSERT INTO GlobalParam VALUES (null,?,?)", (name, 0))
+        return
+
+
+def UpdataDataToRuntimeSQL(cursor: sqlite3.Cursor, table, name, data):
+    if table == Runtime.Input:
+        if cursor.execute("select * from InputParam where name = ?", (name,)).fetchall():
+            cursor.execute("UPDATE InputParam SET data = ? WHERE name = ?", (data, name))
+        else:
+            ErrorLog(f"could not find {name} in InputParam table")
+        return
+    if table == Runtime.Output:
+        if cursor.execute("select * from OutputParam where name = ?", name).fetchall():
+            cursor.execute("UPDATE InputParam SET data = ? WHERE name = ?", (data, name))
+        else:
+            ErrorLog(f"could not find {name} in OutputParam table")
+        return
+    if table == Runtime.Global:
+        if cursor.execute("select * from GlobalParam where name = ?", name).fetchall():
+            cursor.execute("UPDATE InputParam SET data = ? WHERE name = ?", (data, name))
+        else:
+            ErrorLog(f"could not find {name} in GlobalParam table")
         return
 
 
@@ -146,13 +167,12 @@ if __name__ == "__main__":
             for key, value in D.items():
                 if key.find("Action") != -1:
                     actionKey = key
-            # 循环执行定义中的动作
+            # 初始化InputParam
             for action in D[actionKey]:
                 paramName = action[0]
-                SaveDataToRuntime(runtime_cursor, Runtime.Input, paramName, 0)
+                InitDataToRuntimeSQL(runtime_cursor, Runtime.Input, paramName)
         runtime_db.commit()
         DebugLog("InputParam init")
-
 
     # endregion
 
@@ -213,10 +233,12 @@ if __name__ == "__main__":
                     else:
                         res = res[0]
                     print(f"{paramName} = {res} (read from slave {slaveID})")
-                    SaveDataToPersistence(cursor,
-                                          time.strftime("%H:%M:%S", time.localtime()),
-                                          paramName,
-                                          res)
+                    SaveDataToPersistenceSQL(cursor,
+                                             time.strftime("%H:%M:%S", time.localtime()),
+                                             paramName,
+                                             res)
+
+                    UpdataDataToRuntimeSQL(runtime_cursor, Runtime.Input, paramName, res)
 
                 master.close()
                 print("wait for serial port ready")
@@ -229,16 +251,12 @@ if __name__ == "__main__":
                     master.close()
             finally:
                 db.commit()
+                runtime_db.commit()
 
-        # TODO 存入数据库 并储存当前数据帧至文件
         # endregion
 
         # region ——————网站指令行为——————
-        # TODO 根据网站指令更改当前数据帧
-        # endregion
-
-        # region ——————TCP从站行为——————
-        # TODO 从文件读取数据帧，存入寄存器
+        # TODO 根据网站指令更改当前runtime数据库
         # endregion
 
         # region ——————主站业务逻辑——————

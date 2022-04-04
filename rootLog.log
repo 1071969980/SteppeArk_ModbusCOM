@@ -9,3 +9,89 @@
 2022-01-28  00:11:26; DEBUG; app start
 2022-01-28  00:11:26; DEBUG; load modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
 2022-01-28  00:11:26; DEBUG; Create new database at: database/2022-01-28.db
+2022-01-31  13:02:07; DEBUG; app start
+2022-01-31  13:02:07; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-01-31  13:02:07; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-01-31.db
+2022-01-31  13:02:07; DEBUG; InputParam init
+2022-01-31  13:02:12; ERROR; Error raised when execute Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json. Error is [Errno 2] could not open port COM3: [Errno 2] No such file or directory: 'COM3'
+2022-01-31  13:06:17; DEBUG; app start
+2022-01-31  13:06:17; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-01-31  13:06:17; DEBUG; InputParam init
+2022-02-23  14:18:28; DEBUG; app start
+2022-02-23  14:18:28; DEBUG; load modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-02-23  14:18:28; DEBUG; Create new database at: database/2022-02-23.db
+2022-02-23  15:58:42; DEBUG; app start
+2022-02-23  15:58:42; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-02-23  15:58:43; DEBUG; InputParam init
+2022-02-23  15:58:49; ERROR; Error raised when execute Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json. Error is Response length is invalid 0
+2022-02-23  15:59:00; ERROR; Error raised when execute Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json. Error is Response length is invalid 0
+2022-02-23  15:59:54; DEBUG; app start
+2022-02-23  15:59:54; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-02-23  15:59:54; DEBUG; InputParam init
+2022-02-23  16:00:00; ERROR; Error raised when execute Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json. Error is Response length is invalid 0
+2022-02-23  16:00:16; DEBUG; app start
+2022-02-23  16:00:16; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-02-23  16:00:16; DEBUG; InputParam init
+2022-02-23  16:00:22; ERROR; Error raised when execute Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json. Error is Response length is invalid 0
+2022-02-23  16:03:21; DEBUG; app start
+2022-02-23  16:03:21; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-02-23  16:03:21; DEBUG; InputParam init
+2022-02-23  16:07:58; DEBUG; app start
+2022-02-23  16:07:58; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-02-23  16:07:58; DEBUG; InputParam init
+2022-02-23  16:12:33; DEBUG; app start
+2022-02-23  16:12:33; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-02-23  16:12:33; DEBUG; InputParam init
+2022-02-23  16:12:38; ERROR; Error raised when execute Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json. Error is Incorrect number of bindings supplied. The current statement uses 1, and there are 2 supplied.
+2022-02-23  16:12:48; ERROR; Error raised when execute Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json. Error is Incorrect number of bindings supplied. The current statement uses 1, and there are 2 supplied.
+2022-02-23  16:13:12; DEBUG; app start
+2022-02-23  16:13:12; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-02-23  16:13:12; DEBUG; InputParam init
+2022-02-23  16:15:38; DEBUG; app start
+2022-02-23  16:15:38; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-02-23  16:15:38; DEBUG; InputParam init
+2022-02-23  16:17:19; DEBUG; app start
+2022-02-23  16:17:19; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-02-23  16:17:19; DEBUG; InputParam init
+2022-02-24  10:24:32; DEBUG; app start
+2022-02-24  10:24:32; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-02-24  10:24:32; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-02-24.db
+2022-02-24  10:24:32; DEBUG; InputParam init
+2022-02-24  14:46:44; DEBUG; app start
+2022-02-24  14:46:44; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-02-24  14:46:44; DEBUG; InputParam init
+2022-02-25  00:00:06; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-02-25.db
+2022-02-26  00:00:03; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-02-26.db
+2022-02-27  00:00:08; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-02-27.db
+2022-02-28  00:00:05; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-02-28.db
+2022-03-01  00:00:09; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-03-01.db
+2022-03-02  00:00:09; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-03-02.db
+2022-03-03  00:00:06; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-03-03.db
+2022-03-04  00:00:10; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-03-04.db
+2022-03-05  00:00:00; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-03-05.db
+2022-03-06  00:00:05; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-03-06.db
+2022-03-07  00:00:05; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-03-07.db
+2022-03-08  00:00:04; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-03-08.db
+2022-03-09  00:00:00; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-03-09.db
+2022-04-02  00:35:29; DEBUG; app start
+2022-04-02  00:35:29; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-04-02  00:35:29; DEBUG; InputParam init
+2022-04-02  00:35:34; ERROR; Error raised when execute Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json. Error is Response address 0 is different from request address 11
+2022-04-02  00:35:44; ERROR; Error raised when execute Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json. Error is no such table: table01
+2022-04-02  00:35:54; ERROR; Error raised when execute Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json. Error is no such table: table01
+2022-04-02  00:36:04; ERROR; Error raised when execute Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json. Error is no such table: table01
+2022-04-02  00:36:14; ERROR; Error raised when execute Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json. Error is no such table: table01
+2022-04-02  00:38:53; DEBUG; app start
+2022-04-02  00:38:53; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-04-02  00:38:53; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-04-02.db
+2022-04-02  00:38:53; DEBUG; InputParam init
+2022-04-02  17:37:47; DEBUG; app start
+2022-04-02  17:37:47; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-04-02  17:37:47; DEBUG; InputParam init
+2022-04-03  00:00:00; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-04-03.db
+2022-04-04  00:00:02; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-04-04.db
+2022-04-05  00:14:19; DEBUG; app start
+2022-04-05  00:14:19; DEBUG; load /home/pi/Desktop/ModbusCOM/modbusRTU_MasterDefine/Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json successfully
+2022-04-05  00:14:19; DEBUG; Create new database at: /home/pi/Desktop/ModbusCOM/database/2022-04-05.db
+2022-04-05  00:14:19; DEBUG; InputParam init
+2022-04-05  00:14:24; ERROR; Error raised when execute Baud-9600_ByteSize-8_Parity-None_Stop-1_FuncCode-3.json. Error is Response address 255 is different from request address 11
