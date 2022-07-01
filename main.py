@@ -38,7 +38,15 @@ def SaveDataToPersistenceSQL(cursor: sqlite3.Cursor, time, name, data):
     cursor.execute("INSERT INTO table01 VALUES (null,?,?,?)", (time, name, data))
 
 
-def InitDataToRuntimeSQL(cursor: sqlite3.Cursor, table, name):
+def InitDataToRuntimeSQL(cursor: sqlite3.Cursor, table: int, name: str):
+    '''
+    初始化数据到运行时数据库
+
+    :param cursor: 数据库的指针
+    :param table: 表名，int类型，定义在类 Runtime（Enum）之中
+    :param name: 数据的名称
+    :return:
+    '''
     if table == Runtime.Input:
         cursor.execute("INSERT INTO InputParam VALUES (null,?,?)", (name, 0))
         return
@@ -68,7 +76,7 @@ def UpdataDataToRuntimeSQL(cursor: sqlite3.Cursor, table, name, data):
             cursor.execute("UPDATE InputParam SET data = ? WHERE name = ?", (data, name))
         else:
             ErrorLog(f"could not find {name} in GlobalParam table")
-        return
+        return5z
 
 
 if __name__ == "__main__":
