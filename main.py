@@ -58,7 +58,7 @@ def InitDataToRuntimeSQL(cursor: sqlite3.Cursor, table: int, name: str):
         return
 
 
-def UpdataDataToRuntimeSQL(cursor: sqlite3.Cursor, table, name, data):
+def UpdateDataToRuntimeSQL(cursor: sqlite3.Cursor, table, name, data):
     if table == Runtime.Input:
         if cursor.execute("select * from InputParam where name = ?", (name,)).fetchall():
             cursor.execute("UPDATE InputParam SET data = ? WHERE name = ?", (data, name))
@@ -76,7 +76,7 @@ def UpdataDataToRuntimeSQL(cursor: sqlite3.Cursor, table, name, data):
             cursor.execute("UPDATE InputParam SET data = ? WHERE name = ?", (data, name))
         else:
             ErrorLog(f"could not find {name} in GlobalParam table")
-        return5z
+        return
 
 
 if __name__ == "__main__":
@@ -162,7 +162,6 @@ if __name__ == "__main__":
     # endregion
 
     # region ——————检查Runtime数据库————————
-    # TODO Runtime数据库初始化
     RuntimeDatabasePath = os.path.join(RootDir, "Runtime.db")
     if not os.path.exists(RuntimeDatabasePath):
         CriticalToExit("Could not find Runtime.db in root dir")
@@ -189,9 +188,6 @@ if __name__ == "__main__":
         time.sleep(1)
         print(f"{5 - i}...")
 
-    # TODO 初始化 modbus 从站
-    ''
-
     # 开始读取数据的循环
     while True:
         # region ——————检测是否新建数据库——————
@@ -214,15 +210,19 @@ if __name__ == "__main__":
         # region ——————主站读取数据——————
         # 循环读取每一个主站定义
         for D in jsonD:
+            port = D["Port"]
             baud = D["Baud"]
             byteSize = D["ByteSize"]
             parity = D["Parity"]
             stopBits = D["Stop"]
             functionCode = D["FuncCode"]
             try:
-                port01 = cf.get("Port Define", "port01")
+                if port == 0:
+                    port = cf.get("Port Define", "port01")
+                else:
+                    port = cf.get("Port Define", "port02")
                 master = modbus_rtu.RtuMaster(serial.Serial(
-                    port=port01, baudrate=baud, bytesize=byteSize, parity=parity, stopbits=stopBits))
+                    port=port, baudrate=baud, bytesize=byteSize, parity=parity, stopbits=stopBits))
                 master.set_timeout(1.0)
                 # 查找Action的字典键值
                 for key, value in D.items():
@@ -233,8 +233,7 @@ if __name__ == "__main__":
                     paramName = action[0]
                     slaveID = action[1]
                     address = action[2]
-                    saveAddress = action[3]
-                    factor = action[4]
+                    factor = action[3]
                     res = master.execute(slaveID, functionCode, address, 1)
                     if factor != 1:
                         res = round((res[0]) * factor, 2)
@@ -246,7 +245,7 @@ if __name__ == "__main__":
                                              paramName,
                                              res)
 
-                    UpdataDataToRuntimeSQL(runtime_cursor, Runtime.Input, paramName, res)
+                    UpdateDataToRuntimeSQL(runtime_cursor, Runtime.Input, paramName, res)
 
                 master.close()
                 print("wait for serial port ready")
